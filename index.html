@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#000000">
+    <title>Document</title>
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <main>
+        <p>PWA HTML app from scratch</p>
+    </main>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                console.log('Service worker registered successfully with scope: ', registration.scope);
+            }, function(error) {
+                console.log('Service worker registration failed: ', error);
+            });
+        }
+    </script>
+</body>
+</html>
